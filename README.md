@@ -7,11 +7,11 @@ y.shape: (samples, label)
 
 ## Bidirectoinal LSTM
 
-### K-fold cross validatoin
+### K-fold cross validation
 
 k = 3
 
-### fine tune
+### fine tuning
 
 * batch_size
 * units of LSTM
@@ -20,5 +20,7 @@ k = 3
 ### predict test data
 
 
+
+### evaluation
 
 
