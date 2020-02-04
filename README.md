@@ -1,7 +1,7 @@
 ## Input Data
 
-X.shape: (samples, time_steps, features)
-y.shape: (samples, label)
+X.shape: (samples, time_steps, features)  
+y.shape: (samples, label)  
 
 
 
