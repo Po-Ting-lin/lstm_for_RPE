@@ -19,7 +19,6 @@ def getCallback():
                                mode='auto',
                                cooldown=1)
 
-    callbacks = [checkpoint, reduce]
+    callbacks = [checkpoint]
     return callbacks
-
 
