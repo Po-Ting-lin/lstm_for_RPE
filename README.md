@@ -7,7 +7,7 @@ y.shape: (samples, label)
 
 ### fine tuning
 
-K-fold cross validation to fine tune hyperparameter.
+K-fold cross validation to fine tune hyperparameters.
 
 * batch_size  
 ![](/images/lstmfinetunebatch.png)  
@@ -30,9 +30,3 @@ K-fold cross validation to fine tune hyperparameter.
 ### evaluation
 
 * predict test set 
-TN  FP  FN  TP 
-30   1   1  24 
-
-Recall(Sensitivity):  0.96
-Specificity:  0.968
-Accuracy:  0.964
