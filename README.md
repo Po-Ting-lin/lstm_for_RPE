@@ -9,13 +9,13 @@ y.shape: (samples, label)
 
 K-fold cross validation
 
-* batch_size
+* batch_size  
 ![](/images/lstmfinetunebatch.png)  
 
-* units of LSTM
+* units of LSTM  
 ![](/images/lstmfinetuneunits.png)  
 
-* ratio of dropout
+* ratio of dropout  
 ![](/images/lstmfinetunedropout.png)  
 
 
