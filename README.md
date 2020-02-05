@@ -13,7 +13,7 @@ K-fold cross validation
 ![](/images/lstmfinetunebatch.png)  
 
 * units of LSTM  
-![](/images/lstmfinetuneunits.png)  
+![](/images/lstmfinetuneunita.png)  
 
 * ratio of dropout  
 ![](/images/lstmfinetunedropout.png)  
