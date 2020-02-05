@@ -8,20 +8,24 @@ y.shape: (samples, label)
 ### fine tuning
 
 K-fold cross validation
+
 * batch_size
-![](/images/lstmfinetunebatch.png)
+![](/images/lstmfinetunebatch.png)  
+
 * units of LSTM
-![](/images/lstmfinetuneunits.png)
+![](/images/lstmfinetuneunits.png)  
+
 * ratio of dropout
-![](/images/lstmfinetunedropout.png)
+![](/images/lstmfinetunedropout.png)  
+
 
 ### predict test data
-
-![](/images/c1.png)
-
-![](/images/c2.png)
-
-![](/images/c3.png)
+* cell 1
+![](/images/c1.png)  
+* cell 2
+![](/images/c2.png)  
+* cell 3
+![](/images/c3.png)  
 
 ### evaluation
 
