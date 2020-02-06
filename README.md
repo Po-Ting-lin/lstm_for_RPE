@@ -13,7 +13,7 @@ K-fold cross validation to fine tune hyperparameters.
 ![](/images/lstmfinetunebatch.png)  
 
 * units of LSTM  
-![](/images/lstmfinetuneunita.png)  
+![](/images/lstmfinetuneunits.png)  
 
 * ratio of dropout  
 ![](/images/lstmfinetunedropout.png)  
