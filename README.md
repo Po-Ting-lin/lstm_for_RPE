@@ -27,6 +27,7 @@ _________________________________________________________________
 K-fold cross validation to fine tune hyperparameters.
 
 * batch_size  
+
 ![](/images/lstmfinetunebatch.png)  
 
 * units of LSTM  
