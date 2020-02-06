@@ -35,6 +35,12 @@ K-fold cross validation to fine tune hyperparameters.
 * ratio of dropout  
 ![](/images/lstmfinetunedropout.png)  
 
+* initial learning rate  
+![](/images/lrdemo.png)
+
+* step-based learning rate decay  
+![](/images/lrstep.png)
+
 ### evaluation
 
 * learning curve  
