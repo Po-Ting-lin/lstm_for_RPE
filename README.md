@@ -42,14 +42,13 @@ K-fold cross validation to fine tune hyperparameters.
 * step-based learning rate decay  
 ![](/images/lrstep.png)
 
-### evaluation
-
-* learning curve  
-![](/images/loss.png)   
+### evaluation 
 
 * ROC curve  
-![](/images/roc.png)   
+![](/images/roc.png)  
 
+* confusion matrix  
+![](/images/confusion.png)  
 
 
 ### predict test data
