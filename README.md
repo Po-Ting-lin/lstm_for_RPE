@@ -3,7 +3,24 @@
 X.shape: (samples, time_steps, features)  
 y.shape: (samples, label)  
 
-## Bidirectoinal LSTM
+## Bidirectional LSTM
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv1d_1 (Conv1D)            (None, 33, 12)            444       
+_________________________________________________________________
+bidirectional_1 (Bidirection (None, 40)                5280      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 40)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 41        
+=================================================================
+Total params: 5,765
+Trainable params: 5,765
+Non-trainable params: 0
+_________________________________________________________________
+```
 
 ### fine tuning
 
@@ -20,11 +37,11 @@ K-fold cross validation to fine tune hyperparameters.
 
 ### evaluation
 
-* learning curve
-![](/images/loss.png) 
+* learning curve  
+![](/images/loss.png)   
 
-* ROC curve
-![](/images/roc.png) 
+* ROC curve  
+![](/images/roc.png)   
 
 
 
