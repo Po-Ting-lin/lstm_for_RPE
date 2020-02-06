@@ -1,8 +1,16 @@
-from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
+from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau, LearningRateScheduler
 from configuration import *
+from lstm.config import config_dict
+
+def step_decay(epoch):
+    prolong = 10
+    if epoch < 10:
+        return config_dict["learning rate"]
+    else:
+        return config_dict["learning rate"] * 0.5 ** ((epoch-prolong) // 4)
 
 
-def getCallback(reduce_mode):
+def getCallback(reduce_mode, lr_scheduler_mode):
     callbacks = []
     checkpoint = ModelCheckpoint(DEEP_LSTM_ROOT + '\\model_0202_lstm_test.h5',
                                  monitor="val_loss",
@@ -19,8 +27,14 @@ def getCallback(reduce_mode):
                                mode='auto',
                                cooldown=1)
 
+    lrs = LearningRateScheduler(step_decay)
+
     callbacks.append(checkpoint)
+
     if reduce_mode:
         callbacks.append(reduce)
+    if lr_scheduler_mode:
+        callbacks.append(lrs)
+
     return callbacks
 

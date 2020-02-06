@@ -5,7 +5,7 @@ from lstm import *
 
 
 def show_final_history(history):
-    fig, ax = plt.subplots(1, 2, figsize=(15 ,5))
+    fig, ax = plt.subplots(1, 3, figsize=(18 ,5))
     ax[0].set_title('loss')
     ax[0].set_xlabel('epochs')
     ax[0].set_ylabel('loss')
@@ -13,13 +13,19 @@ def show_final_history(history):
     ax[0].plot(history.epoch, history.history["val_loss"], label="Validation loss")
     ax[0].legend()
 
-
     ax[1].set_title('acc')
     ax[1].set_xlabel('epochs')
     ax[1].set_ylabel('%')
     ax[1].plot(history.epoch, history.history["acc"], label="Train acc")
     ax[1].plot(history.epoch, history.history["val_acc"], label="Validation acc")
     ax[1].legend()
+
+    ax[2].set_title('learning rate')
+    ax[2].set_xlabel('epochs')
+    ax[2].plot(history.epoch, history.history["lr"], label="Train lr")
+    ax[2].plot(history.epoch, history.history["val_lr"], label="Validation lr")
+    ax[2].legend()
+
     fig.show()
 
 

@@ -3,6 +3,12 @@ from keras.layers import Dense, Conv1D, LSTM, Dropout, Bidirectional
 from keras.optimizers import Adam
 
 
+def get_lr_metric(optimizer):
+    def lr(y_true, y_pred):
+        return optimizer.lr
+    return lr
+
+
 def bulid_model(config):
     num_samples, num_time_steps, num_features = config["input shape"]
     model = Sequential()
@@ -13,6 +19,8 @@ def bulid_model(config):
 
     a = Adam(lr=config["learning rate"], beta_1=0.9, beta_2=0.999, amsgrad=False)
 
-    model.compile(loss='binary_crossentropy', optimizer=a, metrics=['accuracy'])
+    # The LR will be printed in the progress bar
+    lr_metric = get_lr_metric(a)
+    model.compile(loss='binary_crossentropy', optimizer=a, metrics=['accuracy', lr_metric])
     return model
 
