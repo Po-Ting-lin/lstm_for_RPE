@@ -4,6 +4,8 @@ from lstm import *
 from configuration import *
 import random
 import time
+import matplotlib.pyplot as plt
+
 
 # data generator
 X, y = data_generator()
@@ -21,7 +23,7 @@ for train_index, test_index in kf.split(X):
     history = model.fit(X_train, y_train,
                         validation_data=(X_test, y_test),
                         epochs=50,
-                        batch_size=16,
+                        batch_size=8,
                         callbacks=getCallback(),
                         verbose=0)
 
@@ -32,12 +34,11 @@ for train_index, test_index in kf.split(X):
     preds = evaluation(predictions, y_test)
     auc_buf.append(area_under_curve)
 
-    for g in range(5):
-        random.seed(int(time.time() * 100) % 100)
-        idx = random.randint(0, len(y_test)-1)
-        plot_time_series_data(X_test[idx], y_test[idx], preds[idx])
+    # for g in range(5):
+    #     random.seed(int(time.time() * 100) % 100)
+    #     idx = random.randint(0, len(y_test)-1)
+    #     plot_time_series_data(X_test[idx], y_test[idx], preds[idx])
 
 
 k_auc = np.mean(auc_buf)
 print("AUC: {:.3f} ".format(k_auc))
-
