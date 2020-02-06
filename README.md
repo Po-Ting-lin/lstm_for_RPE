@@ -3,7 +3,7 @@
 X.shape: (samples, time_steps, features)  
 y.shape: (samples, label)  
 
-## Bidirectoinal LSTM
+## Bidirectional LSTM
 
 ### fine tuning
 
