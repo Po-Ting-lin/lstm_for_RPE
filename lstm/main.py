@@ -29,8 +29,9 @@ for train_index, test_index in kf.split(X):
     y_train, y_test = y[train_index], y[test_index]
 
     model = bulid_model(config_dict)
-    plot_model(model, to_file='model.png', show_shapes=True)
 
+
+    plot_model(model, to_file='model.png', show_shapes=True)
 
     history = model.fit(X_train, y_train,
                         validation_data=(X_test, y_test),
@@ -38,6 +39,8 @@ for train_index, test_index in kf.split(X):
                         batch_size=config_dict['batch size'],
                         callbacks=getCallback(config_dict["reduce learning rate"]),
                         verbose=0)
+
+    model.summary()
 
     model = load_model(DEEP_LSTM_ROOT + '\\model_0202_lstm_test.h5')
     predictions = model.predict(X_test)
