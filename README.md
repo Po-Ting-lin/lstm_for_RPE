@@ -4,7 +4,7 @@ X.shape: (samples, time_steps, features)
 y.shape: (samples, label)  
 
 ## Bidirectional LSTM
-
+```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -20,7 +20,7 @@ Total params: 5,765
 Trainable params: 5,765
 Non-trainable params: 0
 _________________________________________________________________
-
+```
 
 ### fine tuning
 
