@@ -5,9 +5,9 @@ from lstm.config import config_dict
 def step_decay(epoch):
     prolong = 10
     if epoch < 10:
-        return config_dict["learning rate"]
+        return config_dict["init learning rate"]
     else:
-        return config_dict["learning rate"] * 0.5 ** ((epoch-prolong) // 4)
+        return config_dict["init learning rate"] * 0.5 ** ((epoch-prolong) // 4)
 
 
 def getCallback(reduce_mode, lr_scheduler_mode):

@@ -46,10 +46,7 @@ for train_index, test_index in kf.split(X):
     #     plot_time_series_data(X_test[idx], y_test[idx], preds[idx])
 
     show_final_history(history)
-    break
 
-
-# k_auc = np.mean(auc_buf)
-# print("AUC: {:.3f} ".format(k_auc))
-# auc_lr.append(k_auc)
+k_auc = np.mean(auc_buf)
+print("AUC: {:.3f} ".format(k_auc))
 

@@ -17,7 +17,7 @@ def bulid_model(config):
     model.add(Dropout(config['dropout']))
     model.add(Dense(1, activation='sigmoid'))
 
-    a = Adam(lr=config["learning rate"], beta_1=0.9, beta_2=0.999, amsgrad=False)
+    a = Adam(lr=config["init learning rate"], beta_1=0.9, beta_2=0.999, amsgrad=False)
 
     # The LR will be printed in the progress bar
     lr_metric = get_lr_metric(a)
