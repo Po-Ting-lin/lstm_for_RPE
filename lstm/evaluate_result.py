@@ -20,11 +20,24 @@ def show_final_history(history):
     ax[1].plot(history.epoch, history.history["acc"], label="Train acc")
     ax[1].plot(history.epoch, history.history["val_acc"], label="Validation acc")
     ax[1].legend()
+    fig.show()
 
 
-def evaluate_model_performance(predictions, X_test, y_test):
+def evaluate_model_performance(predictions, y_test, plot_mode=False):
     FPR, TPR, threshold = roc_curve(y_test, predictions)
-    return auc(FPR, TPR)
+    area_under_curve = auc(FPR, TPR)
+
+    if plot_mode:
+        plt.figure(figsize=(5, 4), dpi=100)
+        plt.plot([0, 1], [0, 1], 'k--')
+        plt.plot(FPR, TPR, label='AUC = {:.3f}'.format(area_under_curve))
+        plt.xlabel('False positive rate')
+        plt.ylabel('True positive rate')
+        plt.title('ROC curve')
+        plt.legend(loc='best')
+        plt.show()
+
+    return area_under_curve
 
 
 def probabilities2label(target, t):

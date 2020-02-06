@@ -2,8 +2,8 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 from configuration import *
 
 
-def getCallback():
-
+def getCallback(reduce_mode):
+    callbacks = []
     checkpoint = ModelCheckpoint(DEEP_LSTM_ROOT + '\\model_0202_lstm_test.h5',
                                  monitor="val_loss",
                                  verbose=1,
@@ -19,6 +19,8 @@ def getCallback():
                                mode='auto',
                                cooldown=1)
 
-    callbacks = [checkpoint]
+    callbacks.append(checkpoint)
+    if reduce_mode:
+        callbacks.append(reduce)
     return callbacks
 
