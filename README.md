@@ -20,11 +20,11 @@ K-fold cross validation to fine tune hyperparameters.
 
 ### evaluation
 
-* learning curve
-![](/images/loss.png) 
+* learning curve  
+![](/images/loss.png)   
 
-* ROC curve
-![](/images/roc.png) 
+* ROC curve  
+![](/images/roc.png)   
 
 
 
